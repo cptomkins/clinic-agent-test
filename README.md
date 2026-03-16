@@ -1,6 +1,6 @@
 # ClinicSoft Support Agent
 
-A conversational AI agent that handles product support for dental/medical clinic practice management software. Built as part of a role assessment for [Harbor](https://harborautomation.com).
+A conversational AI agent that handles product support for dental/medical clinic practice management software. Built as part of a role assessment for the author.
 
 **[Try the live demo →](https://v2.harborautomation.com/clinic-agent)**
 
