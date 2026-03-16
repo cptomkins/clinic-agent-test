@@ -1,0 +1,489 @@
+/* src/lib/clinic-agent/styles.css */
+/* Updated: 2026-03-15 — v0.13.0: customer account panel styles */
+
+/* ── Layout — fills viewport below header ───────── */
+
+.ca-chat {
+  display: flex;
+  padding-top: 4rem;
+  height: 100vh;
+  background: var(--bg);
+}
+
+/* ── Sidebar ────────────────────────────────────── */
+
+.ca-chat__sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  border-top: 1px solid var(--card-border);
+  border-right: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.75rem;
+  gap: 0.5rem;
+  background: var(--bg);
+}
+
+.ca-chat__new-btn {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--fg);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.ca-chat__new-btn:hover {
+  background: var(--btn-ghost-hover-bg);
+}
+
+.ca-chat__conversations {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ca-chat__convo-item {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--card-subtle);
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.ca-chat__convo-item:hover {
+  background: var(--btn-ghost-hover-bg);
+}
+
+.ca-chat__convo-item.active {
+  background: var(--card-bg);
+  color: var(--fg);
+}
+
+/* ── Main chat area ─────────────────────────────── */
+
+.ca-chat__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-top: 1px solid var(--card-border);
+  background: var(--card-bg);
+}
+
+.ca-chat__messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ca-chat__empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--card-subtle);
+  font-size: 0.875rem;
+}
+
+/* ── Message bubbles ────────────────────────────── */
+
+.ca-chat__bubble {
+  max-width: 85%;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.ca-chat__bubble.user {
+  align-self: flex-end;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-fg);
+  padding: 0.625rem 1rem;
+  border-radius: 12px 12px 2px 12px;
+}
+
+.ca-chat__bubble.assistant {
+  align-self: flex-start;
+  color: var(--fg);
+  padding: 0.625rem 0;
+}
+
+.ca-chat__role {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.125rem;
+  color: var(--card-subtle);
+}
+
+.ca-chat__bubble.user .ca-chat__role {
+  color: var(--btn-primary-fg);
+  opacity: 0.7;
+}
+
+.ca-chat__content {
+  margin: 0;
+  word-break: break-word;
+}
+
+.ca-chat__bubble.user .ca-chat__content {
+  white-space: pre-wrap;
+}
+
+/* ── Markdown (assistant messages) ──────────────── */
+
+.ca-chat__markdown {
+  line-height: 1.6;
+}
+
+.ca-chat__markdown p {
+  margin: 0 0 0.5rem;
+}
+
+.ca-chat__markdown p:last-child {
+  margin-bottom: 0;
+}
+
+.ca-chat__markdown ol,
+.ca-chat__markdown ul {
+  margin: 0.25rem 0 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.ca-chat__markdown ul {
+  list-style-type: disc;
+}
+
+.ca-chat__markdown ol {
+  list-style-type: decimal;
+}
+
+.ca-chat__markdown li {
+  margin-bottom: 0.25rem;
+}
+
+.ca-chat__markdown strong {
+  font-weight: 600;
+}
+
+.ca-chat__markdown code {
+  font-size: 0.8125rem;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.ca-chat__markdown pre {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.ca-chat__markdown pre code {
+  background: none;
+  padding: 0;
+}
+
+.ca-chat__markdown table {
+  border-collapse: collapse;
+  margin: 0.25rem 0 0.5rem;
+  font-size: 0.8125rem;
+  width: 100%;
+}
+
+.ca-chat__markdown th,
+.ca-chat__markdown td {
+  border: 1px solid var(--card-border);
+  padding: 0.375rem 0.5rem;
+  text-align: left;
+}
+
+.ca-chat__markdown th {
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.ca-chat__markdown h3,
+.ca-chat__markdown h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+}
+
+.ca-chat__markdown h3:first-child,
+.ca-chat__markdown h4:first-child {
+  margin-top: 0;
+}
+
+.ca-chat__typing {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+/* ── Error ──────────────────────────────────────── */
+
+.ca-chat__error {
+  padding: 0.5rem 2rem;
+  font-size: 0.8125rem;
+  color: var(--btn-danger-bg);
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Input bar ──────────────────────────────────── */
+
+.ca-chat__input-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem 1rem;
+  border-top: 1px solid var(--card-border);
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ca-chat__input {
+  flex: 1;
+  resize: none;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  line-height: 1.4;
+  background: var(--input-bg);
+  color: var(--input-text);
+}
+
+.ca-chat__input:focus {
+  outline: none;
+  border-color: var(--focus-ring);
+}
+
+.ca-chat__input::placeholder {
+  color: var(--input-helper);
+}
+
+.ca-chat__send-btn {
+  padding: 0.625rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-fg);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.ca-chat__send-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ca-chat__send-btn:not(:disabled):hover {
+  background: var(--btn-primary-hover-bg);
+}
+
+/* ── Customer account panel (right) ─────────────── */
+
+.ca-panel__fab {
+  position: fixed;
+  top: 5rem;
+  right: 1rem;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--fg);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+.ca-panel__fab:hover {
+  background: var(--btn-ghost-hover-bg);
+}
+
+.ca-panel {
+  width: 0;
+  flex-shrink: 0;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.2s ease;
+  overflow: hidden;
+}
+
+.ca-panel.open {
+  width: 300px;
+  border-top: 1px solid var(--card-border);
+  border-left: 1px solid var(--card-border);
+}
+
+.ca-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.75rem 0.5rem;
+}
+
+.ca-panel__title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0;
+}
+
+.ca-panel__close {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--card-subtle);
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.ca-panel__close:hover {
+  background: var(--btn-ghost-hover-bg);
+  color: var(--fg);
+}
+
+/* ── Panel body & sections ──────────────────────── */
+
+.ca-panel__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ca-panel__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.ca-panel__section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0 0 0.125rem;
+}
+
+/* ── Account fields ─────────────────────────────── */
+
+.ca-panel__field {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.25rem 0;
+}
+
+.ca-panel__label {
+  font-size: 0.75rem;
+  color: var(--card-subtle);
+}
+
+.ca-panel__value {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+/* ── Ticket list ────────────────────────────────── */
+
+.ca-panel__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ca-panel__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  background: var(--card-bg);
+}
+
+.ca-panel__item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ca-panel__item-primary {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--fg);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ca-panel__item-meta {
+  font-size: 0.6875rem;
+  color: var(--page-meta);
+}
+
+.ca-panel__empty {
+  font-size: 0.8125rem;
+  color: var(--card-subtle);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* ── Ticket status badge ────────────────────────── */
+
+.ca-panel__ticket-status {
+  flex-shrink: 0;
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  line-height: 1.4;
+}
+
+.ca-panel__ticket-status.open {
+  background: rgba(234, 179, 8, 0.15);
+  color: #a16207;
+}
+
+.ca-panel__ticket-status.in_progress {
+  background: rgba(59, 130, 246, 0.15);
+  color: #1d4ed8;
+}
+
+.ca-panel__ticket-status.resolved {
+  background: rgba(34, 197, 94, 0.15);
+  color: #15803d;
+}

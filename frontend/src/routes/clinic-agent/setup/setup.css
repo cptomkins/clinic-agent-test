@@ -1,0 +1,13 @@
+/* src/routes/clinic-agent/setup/setup.css */
+
+.setup-btn-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.setup-btn-wrap .btn-primary {
+  text-align: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  padding-inline: 3rem;
+}

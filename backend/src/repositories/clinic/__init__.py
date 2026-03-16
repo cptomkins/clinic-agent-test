@@ -1,0 +1,4 @@
+# backend/src/repositories/clinic/__init__.py
+from .clinic_conversations import ClinicConversationRepository
+from .clinic_customer_accounts import ClinicCustomerAccountRepository
+from .clinic_support_tickets import ClinicSupportTicketRepository
