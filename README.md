@@ -83,7 +83,7 @@ The fastest way to evaluate this is the deployed version:
 
 ## About This Repo
 
-This is a curated extract of the agent-specific code from a larger production platform ([Harbor](https://harborautomation.com)). It includes everything that makes the agent work — the chat engine, tool schemas, tool execution, knowledge base, data models, system prompt, and the full frontend — but omits platform-level infrastructure like auth, deployment config, and shared utilities.
+This is a curated extract of the agent-specific code from a larger production platform called Harbor Automation. It includes everything that makes the agent work — the chat engine, tool schemas, tool execution, knowledge base, data models, system prompt, and the full frontend — but omits platform-level infrastructure like auth, deployment config, and shared utilities.
 
 **The live demo is the best way to evaluate the agent end-to-end.** This repo is for reviewing the code.
 
