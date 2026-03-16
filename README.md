@@ -142,22 +142,6 @@ frontend/
             └── setup.css
 ```
 
-## Key Design Decisions
-
-- **Knowledge base over hardcoded responses.** Help articles live as markdown files organized by topic, searched with keyword matching and heading-boost scoring. This means the agent's answers improve by editing a text file, not code.
-- **Real escalation via email.** When the agent can't resolve an issue, it creates a support ticket in the DB and sends a structured summary to the support team via Postmark, CC'ing the user. This is a real action, not a simulated one.
-- **Mock customer context for personalization.** Each demo user gets a customer account (plan, seats, billing cycle) so the agent can give specific answers ("Your next bill is March 28") instead of generic ones.
-- **Keyword search over vector DB.** For a knowledge base of ~24 chunks, keyword search with stop word filtering and heading-match boosting is fast, predictable, and good enough. A vector DB would be the right move at scale but adds complexity without meaningfully improving results at this size.
-- **Streaming for responsiveness.** Responses stream token-by-token via SSE. The frontend renders markdown in real time, so the agent feels conversational rather than batch-response.
-
-## What I'd Build Next
-
-- **Vector search** — replace keyword matching as the KB grows beyond what keyword search handles well
-- **Ticket tracking in the UI** — let users see status updates on their escalated tickets
-- **Analytics on common questions** — identify KB gaps from conversation patterns
-- **Multi-agent routing** — specialist agents for billing vs. technical vs. sales, with a router deciding who handles each message
-- **Resolution feedback loop** — thumbs up/down on agent responses to measure and improve quality
-
 ## Author
 
-Built by [Your Name] — [your email or portfolio link]
+Built by Caleb Tomkins — cptomkins@gmail.com
